@@ -3,27 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LogController::class, 'login'])->name('login');
+Route::post('/', [LogController::class, 'usuario'])->name('login.post');
+Route::get('/alumno', [LogController::class, 'home'])->name('alumno.home');
 
-*/
-
-Route::get('/',[LogController::class, 'login']);
-
-
-
-
-
-
-
-
-
+Route::get('/profesor/propuesta', [ProfesorController::class, 'propuesta'])->name('profesor.propuesta');
+Route::get('/administrador/propuesta', [AdministradorController::class, 'propuesta'])->name('administrador.propuesta');
