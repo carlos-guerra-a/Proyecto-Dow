@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color:lightsteelblue">
+<body style="background-color:white">
 
     <nav class="navbar bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
@@ -18,15 +18,15 @@
         </div>
       </nav>
     
-    <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center">
+    <div class="container-fluid d-flex flex-column justify-content-center">
         <div class="row">
-            <div class="col d-flex flex-fluid justify-content-center">
-                <div class="card">
+            <div class="col d-flex flex-fluid justify-content-center ">
+                <div class="card mt-5">
                     <div class="card-body">
                         <h5 class="card-title">Bienvenido</h5>
                         <form method="POST" action="{{ route('login.post') }}">
                             @csrf
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="email" class="form-label">Cuenta USM</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su cuenta USM">
 
@@ -36,9 +36,9 @@
                                 <label for="password" class="form-label">Clave</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su clave">
 
-                            </div>
+                            </div> --}}
                             <div class="mb-3">
-                                <label class="form-label">Rol</label>
+                                <label class="form-label">Seleccione su perfil:</label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="usuario" id="alumno" value="alumno" checked>
                                     <label class="form-check-label" for="alumno">
@@ -58,7 +58,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <div class="row mx-3 justify-content-center"><button type="submit" class="btn btn-primary">Ingresar</button></div>
                         </form>
                     </div>
                 </div>

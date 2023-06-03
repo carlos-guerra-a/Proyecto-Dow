@@ -22,18 +22,31 @@ class LogController extends Controller
         return redirect()->route('alumno.home');
 
     } elseif ($tipoUsuario === 'profesor') {
-        return redirect('/profesor/propuesta');
+        return redirect()->route('profesor.home');
 
     } elseif ($tipoUsuario === 'administrador') {
-        return redirect('/administrador/propuesta');
+        return redirect()->route('admin.home');
     }
 }
 
 
-    public function home()
+    public function homeAlumno()
 {
     return view('alumno.home');
 }
+
+    public function homeProfesor()
+    {
+        return view('profesor.home');
+    }
+
+    public function homeAdmin()
+    {
+        return view('admin.home');
+    }
+
+
+
 
 }
 
