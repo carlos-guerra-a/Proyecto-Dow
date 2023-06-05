@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Estudiante;
 
 class LogController extends Controller
 {
@@ -37,7 +38,8 @@ class LogController extends Controller
 
     public function homeProfesor()
     {
-        return view('profesor.home');
+        $alumnos = Estudiante::all();
+        return view('home')->with('alumnos', $alumnos);
     }
 
     public function homeAdmin()
