@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('propuestas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->autoIncrement();
             $table->date('fecha');
             $table->string('documento', 100);
-            $table->tinyInteger('estado', 4);
+            $table->tinyInteger('estado');
             $table->string('estudiante_rut', 10);
             $table->foreign('estudiante_rut')->references('rut')->on('estudiantes');
         });
@@ -29,3 +29,4 @@ return new class extends Migration
         Schema::dropIfExists('propuestas');
     }
 };
+

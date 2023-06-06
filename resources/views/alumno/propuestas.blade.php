@@ -21,7 +21,7 @@
     </nav>
 
     <div class="text-center mb-4">
-        <h1>Propuestas de {{ $alumnos->nombre }}</h1>
+        <h1>Propuestas de {{ $alumnos->nombre }} {{ $alumnos->apellido }}</h1>
     </div>
     <div class="d-flex justify-content-center align-items-center">
         @foreach ($propuestas as $propuesta)
