@@ -15,19 +15,17 @@
                 <img src="https://aula.usm.cl/portada/images/logo-usm_blanco.ba50c1e92c05ce59220ab09bd88a6d5b.svg" alt="Logo" class="d-inline-block align-text-top container-fluid">    
             </a>
             <div class="d-flex justify-content-center mb-4">
-                <a href="{{ route('login') }}" class="btn btn-primary border">Volver</a>
+                <a href="{{ route('login') }}" class="btn btn-primary border">Comentar</a>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <a href="{{ route('alumno.home') }}" class="btn btn-primary border">Volver</a>
             </div>
         </div>
     </nav>
+    <div class="container">
+        <h1>Propuesta {{ $propuesta->id }}</h1>
+        <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf">
+    </div>
 
-    <h1>Lista de profesores</h1>
-        <div class="list-group" id="profesores-list">  
-            @foreach ($profesores as $profesor)
-                <a href="{{ route('alumno.home') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <div>
-                    <span class="font-weight-bold">Nombre de profesor:</span> {{ $profesor->nombre }} {{ $profesor->apellido }}
-                </div>
-            @endforeach
-        </div>
 </body>
 </html>
