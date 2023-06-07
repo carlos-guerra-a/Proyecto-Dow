@@ -38,8 +38,7 @@ class LogController extends Controller
 
     public function homeProfesor()
     {
-        $alumnos = Estudiante::all();
-        return view('home')->with('alumnos', $alumnos);
+        return view('profesor.home');
     }
 
     public function homeAdmin()
