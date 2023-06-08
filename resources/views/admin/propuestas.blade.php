@@ -11,7 +11,7 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>USM - Propuestas</title>
 </head>
 <body>
     @php
@@ -33,39 +33,41 @@
         <h1>Propuestas de {{ $alumnos->nombre }} {{ $alumnos->apellido }}</h1>
     </div>
 
-        <div class="accordion" id="propuestas-accordion">
-            @foreach ($propuestas as $propuesta)
-                <div class="card">
-                    <div class="list-group-item d-flex">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-{{ $propuesta->id }}" aria-expanded="true" aria-controls="collapse-{{ $propuesta->id }}">
-                                ID de propuesta: {{ $propuesta->id }} | Estado: {{ $propuesta->estado }}
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
-                        <div class="card-body">
-                            <div class="container">
-                                <h1>Propuesta {{ $propuesta->id }}</h1>
-                                <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf">
-                            </div>
+    <div class="accordion" id="propuestas-accordion">
+        @foreach ($propuestas as $propuesta)
+            <div class="card">
+                <div class="list-group-item d-flex">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-{{ $propuesta->id }}" aria-expanded="true" aria-controls="collapse-{{ $propuesta->id }}">
+                            ID de propuesta: {{ $propuesta->id }} | Estado: {{ $estados[$propuesta->estado] }}
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
+                    <div class="card-body">
+                        <div class="container">
+                            <h1>Propuesta {{ $propuesta->id }}</h1>
+                            <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf">
                         </div>
-                        <div class="card-footer">
-                            <div class="form-group">
-                                <label for="opciones">Seleccione el estado que desea colocar</label>
-                                <select class="form-control" id="opciones">
-                                    <option value="1">Estado 1</option>
-                                    <option value="2">Estado 2</option>
-                                    <option value="3">Estado 3</option>
-                                    <option value="4">Estado 4</option>
-                                </select>
-                                </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="form-group">
+                            <label for="opciones">Seleccione el estado que desea colocar</label>
+                            <select class="form-control" id="opciones">
+                                <option value="1">Esperando Revisión</option>
+                                <option value="2">Modificar Propuesta</option>
+                                <option value="3">Rechazado</option>
+                                <option value="4">Aceptado</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a href="{{ route('admin.home') }}" class="btn btn-primary mr-2">Modificar Estado</a>
+                            <a href="{{ route('admin.home') }}" class="btn btn-secondary mr-2">Cancelar</a>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            </div>
+        @endforeach
     </div>
-
-
 </body>
 </html>
