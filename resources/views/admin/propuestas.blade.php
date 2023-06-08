@@ -11,13 +11,13 @@
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USM - Propuestas</title>
+    <title>Document</title>
 </head>
 <body>
     @php
         $estados = [1 => 'Esperando Revisión',2=>'Modificar Propuesta',3=>'Rechazado',4=>'Aceptado'];
     @endphp
-
+    
     <nav class="navbar bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -42,7 +42,6 @@
                                 ID de propuesta: {{ $propuesta->id }} | Estado: {{ $propuesta->estado }}
                             </button>
                         </h2>
-
                     </div>
                     <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                         <div class="card-body">
@@ -53,12 +52,16 @@
                         </div>
                         <div class="card-footer">
                             <div class="form-group">
-                                <label for="comentario-{{ $propuesta->id }}">Comentario:</label>
-                                <textarea class="form-control" name="comentario" id="comentario-{{ $propuesta->id }}" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Comentar</button>
+                                <label for="opciones">Seleccione el estado que desea colocar</label>
+                                <select class="form-control" id="opciones">
+                                    <option value="1">Estado 1</option>
+                                    <option value="2">Estado 2</option>
+                                    <option value="3">Estado 3</option>
+                                    <option value="4">Estado 4</option>
+                                </select>
+                                </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
             @endforeach
     </div>

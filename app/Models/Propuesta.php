@@ -21,22 +21,14 @@ class Propuesta extends Model
             return $this->belongsTo(Estudiante::class, 'estudiante_rut', 'rut');}
         
             
-        //obtener lista de profesores que comentaron una propuesta
         public function profesores():BelongsToMany{
             return $this->belongsToMany(Profesor::class);
         }    
 
-
-        //obtener lista de profesores que comentaron propuesta
-        //con datos de tabla de insterseccion
         public function profesoresConPivot():BelongsToMany{
             return $this->belongsToMany(Profesor::class)->withPivot(['fecha', 'comentario']);
 
     }
 
 }
-
-//public function estudiante():BelongsTo{
-    //return $this->belongsTo(Estudiante::class, 'estudiante_rut', 'rut');}
-
 

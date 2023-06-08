@@ -23,7 +23,12 @@ class AlumnoController extends Controller
         return view('alumnos.show', compact('alumnos'));
     }
 
-    
+    public function admin()
+    {
+        $alumnos = Estudiante::all();
+        return view('admin.home', compact('alumnos'));
+    }
+
     public function propuestas($rut)
     {
     $alumnos = Estudiante::find($rut);
