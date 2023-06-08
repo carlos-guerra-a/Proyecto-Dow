@@ -18,10 +18,11 @@ class Estudiante extends Model
 
     //obtiene todas las propuestas de un alumno
     public function propuestas():HasMany{
-        return $this->hasMany(Propuesta::class);
+        return $this->hasMany(Propuesta::class, 'estudiante_rut', 'rut');
     }
 }
 
  //obtiene todas las propuestas de un alumno
  //public function propuestas():HasMany{
    // return $this->hasMany(Propuesta::class, 'estudiante_rut', 'rut');}}
+
