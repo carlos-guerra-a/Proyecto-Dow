@@ -46,13 +46,14 @@
                 <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                     <div class="card-body">
                         <div class="container">
-                            <h1>Propuesta {{ $propuesta->id }}</h1>
-                            <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf">
+                            {{-- <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf"> --}}
+                            <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">
+
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="form-group">
-                            <label for="opciones">Seleccione el estado que desea colocar</label>
+                            <label for="opciones">Seleccione estado:</label>
                             <select class="form-control" id="opciones">
                                 <option value="1">Esperando Revisión</option>
                                 <option value="2">Modificar Propuesta</option>
