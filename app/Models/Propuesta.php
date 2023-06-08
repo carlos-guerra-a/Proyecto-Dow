@@ -18,7 +18,7 @@ class Propuesta extends Model
         'fecha', 'documento', 'estado', 'estudiante_rut',];
 
         public function estudiante():BelongsTo{
-            return $this->belongsTo(Estudiante::class);}
+            return $this->belongsTo(Estudiante::class, 'estudiante_rut', 'rut');}
         
             
         public function profesores():BelongsToMany{
