@@ -5,6 +5,7 @@ use App\Http\Controllers\LogController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\PropuestaController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', [LogController::class, 'login'])->name('login');
 Route::post('/', [LogController::class, 'usuario'])->name('login.post');
@@ -14,4 +15,11 @@ Route::get('/profesor', [LogController::class, 'homeProfesor'])->name('profesor.
 Route::get('/home/profesor', [ProfesorController::class, 'verProfesor'])->name('profesor.home');
 Route::get('/admin', [LogController::class, 'homeAdmin'])->name('admin.home');
 Route::get('/propuestas/{id}', [PropuestaController::class, 'verPropuesta'])->name('propuestas.ver');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
+Route::get('/alumno{rut}/propuestas', [AdminController::class, 'propuestas'])->name('admin.propuestas');
+Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
+Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
+
+
+
 

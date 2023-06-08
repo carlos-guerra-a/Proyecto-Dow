@@ -15,10 +15,8 @@ class LogController extends Controller
 
     public function usuario(Request $request)
 {
-    // Obtener el tipo de usuario seleccionado
     $tipoUsuario = $request->input('usuario');
 
-    // Redireccionar según el tipo de usuario
     if ($tipoUsuario === 'alumno') {
         return redirect()->route('alumno.home');
 

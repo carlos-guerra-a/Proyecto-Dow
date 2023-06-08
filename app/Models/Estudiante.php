@@ -15,13 +15,7 @@ class Estudiante extends Model
     public $incrementing = false;
     protected $fillable = ['rut', 'nombre', 'apellido', 'email'];
     
-
-    //obtiene todas las propuestas de un alumno
     public function propuestas():HasMany{
         return $this->hasMany(Propuesta::class);
     }
 }
-
- //obtiene todas las propuestas de un alumno
- //public function propuestas():HasMany{
-   // return $this->hasMany(Propuesta::class, 'estudiante_rut', 'rut');}}

@@ -52,12 +52,16 @@
                         </div>
                         <div class="card-footer">
                             <div class="form-group">
-                                <label for="comentario-{{ $propuesta->id }}">Comentario:</label>
-                                <textarea class="form-control" name="comentario" id="comentario-{{ $propuesta->id }}" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Comentar</button>
+                                <label for="opciones">Seleccione el estado que desea colocar</label>
+                                <select class="form-control" id="opciones">
+                                    <option value="1">Estado 1</option>
+                                    <option value="2">Estado 2</option>
+                                    <option value="3">Estado 3</option>
+                                    <option value="4">Estado 4</option>
+                                </select>
+                                </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
             @endforeach
     </div>
