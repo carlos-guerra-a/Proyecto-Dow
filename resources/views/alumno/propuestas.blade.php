@@ -39,7 +39,7 @@
                     <div class="list-group-item d-flex">
                         <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-{{ $propuesta->id }}" aria-expanded="true" aria-controls="collapse-{{ $propuesta->id }}">
-                                ID de propuesta: {{ $propuesta->id }} | Estado: {{ $propuesta->estado }}
+                                ID de propuesta: {{ $propuesta->id }} | Estado: {{ $estados[$propuesta->estado] }}
                             </button>
                         </h2>
 
@@ -47,9 +47,7 @@
                     <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                         <div class="card-body">
                             <div class="container">
-                                <h1>Propuesta {{ $propuesta->id }}</h1>
-                                <embed src="{{ asset('storage/' . $propuesta->documento) }}" width="100%" height="600px" type="application/pdf">
-                            </div>
+                                <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            </div>
                         </div>
                         <div class="card-footer">
                             <div class="form-group">

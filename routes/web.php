@@ -20,6 +20,16 @@ Route::get('/alumno{rut}/propuestas', [AdminController::class, 'propuestas'])->n
 Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
 Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
 
+Route::get('/alumno/subir', function(){return view('alumno.subir');})->name('alumno.subir');
 
 
+Route::post('/alumno/subir', function (Illuminate\Http\Request $request) {
+    // Procesar la subida del archivo PDF y guardar la propuesta
 
+    $pdf = $request->file('pdf');
+    $pdf->move(public_path('pdf'), $pdf->getClientOriginalName());
+
+    // Código adicional para guardar la propuesta en la base de datos
+
+    return redirect()->route('alumno.home')->with('success', 'Propuesta subida exitosamente.');
+})->name('alumno.subirPropuesta');
