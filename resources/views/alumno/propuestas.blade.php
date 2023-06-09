@@ -49,18 +49,19 @@
                             <div class="container">
                                 <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            </div>
                         </div>
-                        {{-- <div class="card-footer">
-                            <div class="form-group">
-                                <label for="comentario-{{ $propuesta->id }}">Comentario:</label>
-                                <textarea class="form-control" name="comentario" id="comentario-{{ $propuesta->id }}" rows="3" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Comentar</button>
-                        </div> --}}
+                        
                      </div>
                 </div>
             @endforeach
-    </div>
+            <div>
+                <div class="row">
+                    <div class="col mx-4">
+                        <a href="{{ route('alumno.subir') }}" class="btn btn-primary ml-auto">Agregar Propuesta</a>
+                    </div>
+                </div>
 
+            </div>
+            
 
 </body>
 </html>

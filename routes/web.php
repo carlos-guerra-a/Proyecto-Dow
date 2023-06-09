@@ -28,7 +28,11 @@ Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor']
 Route::get('/profesor/{rut}/alumnos', [ProfesorController::class, 'alumnos'])->name('profesor.alumnos');
 
 // Subir
-Route::get('/alumno/subir', function(){return view('alumno.subir');})->name('alumno.subir');
+Route::get('/alumno/subir', [AlumnoController::class, 'vistaSubir'])->name('alumno.subir');
+
+
+
+//subir
 Route::post('/alumno/subir', function (Illuminate\Http\Request $request) {
     // Procesar la subida del archivo PDF y guardar la propuesta
 

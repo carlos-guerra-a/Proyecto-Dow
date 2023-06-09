@@ -36,5 +36,14 @@ class AlumnoController extends Controller
     
     return view('alumno.propuestas', compact('alumnos','propuestas'));
     }
+
+    //    
+    public function vistaSubir(){
+
+
+        return view('alumno.subir');
+    }
+
+
     
 }
