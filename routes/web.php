@@ -32,13 +32,4 @@ Route::get('/alumno/{rut}/subir', [AlumnoController::class, 'vistaSubir'])->name
 
 
 //subir
-Route::post('/alumno/subir', function (Illuminate\Http\Request $request) {
-    // Procesar la subida del archivo PDF y guardar la propuesta
-
-    $pdf = $request->file('pdf');
-    $pdf->move(public_path('pdf'), $pdf->getClientOriginalName());
-
-    // Código adicional para guardar la propuesta en la base de datos
-
-    return redirect()->route('alumno.home')->with('success', 'Propuesta subida exitosamente.');
-})->name('alumno.subirPropuesta');
+Route::post('/alumno/subir', [PropuestaController::class, 'subirPropuesta'])->name('alumno.subirPropuesta');

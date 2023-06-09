@@ -9,7 +9,7 @@
 
             <div class="form-group">
                 <label for="pdf">Seleccione el archivo PDF:</label>
-                <input type="file" name="pdf" id="pdf" class="form-control-file">
+                <input type="file" name="documento" id="pdf" class="form-control-file">
             </div>
 
             <button type="submit" class="btn btn-primary">Subir Propuesta</button>
