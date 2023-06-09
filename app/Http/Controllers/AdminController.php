@@ -23,7 +23,7 @@ class AdminController extends Controller
     $alumnos = Estudiante::find($rut);
     $propuestas = $alumnos->propuestas;
     
-    return view('admin.propuestas', compact('alumnos','propuestas'));
+    return view('alumno.propuestas', compact('alumnos','propuestas'));
     }
 
     public function agregarAlumno(){

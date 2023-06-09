@@ -16,13 +16,19 @@ Route::get('/home/profesor', [ProfesorController::class, 'verProfesor'])->name('
 Route::get('/admin', [LogController::class, 'homeAdmin'])->name('admin.home');
 Route::get('/propuestas/{id}', [PropuestaController::class, 'verPropuesta'])->name('propuestas.ver');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
-Route::get('/alumno{rut}/propuestas', [AdminController::class, 'propuestas'])->name('admin.propuestas');
+Route::get('/alumno/{rut}/propuestas', [AdminController::class, 'propuestas'])->name('admin.propuestas');
+
+
+
+//agregar profe o alumno
 Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
 Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
 
+
+
+
+//subir 
 Route::get('/alumno/subir', function(){return view('alumno.subir');})->name('alumno.subir');
-
-
 Route::post('/alumno/subir', function (Illuminate\Http\Request $request) {
     // Procesar la subida del archivo PDF y guardar la propuesta
 
