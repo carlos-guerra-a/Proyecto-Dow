@@ -18,17 +18,16 @@ Route::get('/propuestas/{id}', [PropuestaController::class, 'verPropuesta'])->na
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.home');
 
 Route::get('/admin/{rut}/propuestas', [AdminController::class, 'propuestas'])->name('admin.propuestas');
-
+Route::get('/profesor/{rut}/alumnos', [ProfesorController::class, 'alumnos'])->name('profesor.alumnos');
 Route::get('/profesor/{rut}/propuestas', [ProfesorController::class,'propuestas'])->name('profesor.propuestas');
 
 // Agregar profe o alumno
 Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
 Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
 
-Route::get('/profesor/{rut}/alumnos', [ProfesorController::class, 'alumnos'])->name('profesor.alumnos');
 
 // Subir
-Route::get('/alumno/subir', [AlumnoController::class, 'vistaSubir'])->name('alumno.subir');
+Route::get('/alumno/{rut}/subir', [AlumnoController::class, 'vistaSubir'])->name('alumno.subir');
 
 
 

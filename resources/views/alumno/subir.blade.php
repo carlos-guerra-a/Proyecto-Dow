@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Propuesta</title>
-</head>
-<body>
-    <h1>Subir Propuesta</h1>
+@extends('templates.master')
 
-    <form action="{{ route('alumno.subirPropuesta') }}" method="POST" enctype="multipart/form-data">
+@section('contenido-principal')
+    <div class="container-fluid d-flex flex-column justify-content-center">
+        <h1 class="text-center">Subir Propuesta</h1>
 
-        @csrf
+        <form action="{{ route('alumno.subirPropuesta', ['rut' => $rut]) }}" method="POST" enctype="multipart/form-data" class="mt-4">
+            @csrf
 
-        <div>
-            <label for="pdf">Seleccione el archivo PDF:</label>
-            <input type="file" name="pdf" id="pdf">
-        </div>
+            <div class="form-group">
+                <label for="pdf">Seleccione el archivo PDF:</label>
+                <input type="file" name="pdf" id="pdf" class="form-control-file">
+            </div>
 
-        <button type="submit">Subir Propuesta</button>
-    </form>
-</body>
-</html>
+            <button type="submit" class="btn btn-primary">Subir Propuesta</button>
+        </form>
+    </div>
+@endsection

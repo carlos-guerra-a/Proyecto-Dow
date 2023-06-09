@@ -56,7 +56,8 @@
             <div>
                 <div class="row">
                     <div class="col mx-4">
-                        <a href="{{ route('alumno.subir') }}" class="btn btn-primary ml-auto">Agregar Propuesta</a>
+                        <a href="{{ route('alumno.subir', ['rut' => $alumnos->rut]) }}" class="btn btn-primary ml-auto">Agregar Propuesta</a>
+
                     </div>
                 </div>
 
