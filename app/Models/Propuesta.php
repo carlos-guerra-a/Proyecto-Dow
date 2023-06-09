@@ -20,15 +20,26 @@ class Propuesta extends Model
         public function estudiante():BelongsTo{
             return $this->belongsTo(Estudiante::class, 'estudiante_rut', 'rut');}
         
-            
-        public function profesores():BelongsToMany{
-            return $this->belongsToMany(Profesor::class);
+        
+        public function profesores(): BelongsToMany
+        {
+            return $this->belongsToMany(Profesor::class, 'profesor_propuesta', 'propuesta_id', 'profesor_rut');
         }    
 
-        public function profesoresConPivot():BelongsToMany{
-            return $this->belongsToMany(Profesor::class)->withPivot(['fecha', 'comentario']);
+        // public function profesores():BelongsToMany{
+        //     return $this->belongsToMany(Profesor::class);
+        // }    
 
-    }
+        // public function profesoresConPivot():BelongsToMany{
+        //     return $this->belongsToMany(Profesor::class)->withPivot(['fecha', 'comentario']);
+
+          public function profesoresConPivot(): BelongsToMany
+        {
+            return $this->belongsToMany(Profesor::class, 'profesor_propuesta', 'propuesta_id', 'profesor_rut')->withPivot(['fecha', 'comentario']);
+        }
+            
+
+    
 
 }
 

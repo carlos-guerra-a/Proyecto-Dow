@@ -18,13 +18,22 @@ class Profesor extends Model
 
     public function propuestas():BelongsToMany{
 
-        return $this->belongsToMany(Propuesta::class);
+        return $this->belongsToMany(Propuesta::class,'profesor_propuesta', 'profesor_rut', 'propuesta_id');
     }
 
-    public function propuestasConPivot():BelongsToMany{
-        return $this->belongsToMany(Propuesta::class)->withPivot(['fecha', 'comentario']);
+    // public function propuestasConPivot():BelongsToMany{
+    //     return $this->belongsToMany(Propuesta::class)->withPivot(['fecha', 'comentario']);
 
+    // }
+    
+    public function propuestasConPivot(): BelongsToMany
+    {
+        return $this->belongsToMany(Propuesta::class, 'profesor_propuesta', 'profesor_rut', 'propuesta_id')->withPivot(['fecha', 'comentario']);
     }
+
+
+
+
 
 
 }
