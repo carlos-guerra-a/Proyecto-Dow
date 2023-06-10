@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Estudiante;
 use App\Models\Profesor_Propuesta;
 use App\Models\Profesor;
+use App\Models\Propuesta;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -56,3 +57,4 @@ class AlumnoController extends Controller
 
     
 }
+
