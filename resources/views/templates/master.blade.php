@@ -21,7 +21,7 @@
                 <a class="navbar-brand" href="{{ route('login') }}">
                     <img src="{{asset('images\logo-usm.png')}}"  class="d-inline-block align-text-top container-fluid">
                 </a>
-                <div class="d-flex justify-content-center mb-4">
+                <div class="d-flex justify-content-center mb-3">
                     <a href="{{ route('login') }}" class="btn btn-dark border text-white">Volver</a>
                 </div>
             </div>
@@ -29,7 +29,7 @@
     </div>
     
     <!-- contenido principal -->
-    <div class="container-fluid d-flex flex-column justify-content-center">
+    <div class="container-fluid  justify-content-center mt-4">
         @yield('contenido-principal')
     </div>
     
@@ -38,32 +38,11 @@
         <footer class="bg-light text-dark pt-2 pb-2 mx-0" style="padding: 1em 0; margin-top: auto">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start">
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-1 font-weight-bold text-primary">Alumnos</h6>
-                        <hr class="mb-2">
-                        <p>
-                            Joaquín Vergara 
-                        </p>
-                        <p>
-                            Carlos Guerra
-                        </p>
-                        <p>
-                            Ian Dodman
-                        </p>
+                    
+                    <div class="col text-center mt-2">
+                        <p>Sistema de Gestión para TSI - Informática USM</p>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
-                        <h6 class="text-uppercase mb-1 font-weight-bold text-primary">Correos</h6>
-                        <hr class="mb-2">
-                        <p>
-                            <a href="#" class="text-dark">joaquin.vergarae@usm.cl</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark">carlos.guerraa@usm.cl</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark">ian.dodman@usm.cl</a>
-                        </p>
-                    </div>
+                    
                     <hr class="mb-2">
                     
                 </div>
