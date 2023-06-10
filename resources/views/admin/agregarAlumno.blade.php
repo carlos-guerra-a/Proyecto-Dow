@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <!-- Agrega los enlaces CSS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -26,30 +25,32 @@
 
     <div class="container mt-4">
         <h1>Agregar Alumno</h1>
-        <form>
+        <!-- ... -->
+        <form action="{{ route('admin.guardarAlumno') }}" method="POST"> <!-- Agrega el atributo 'action' y 'method' al formulario -->
+            @csrf <!-- Agrega el campo CSRF -->
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" value="" >
+                <input type="text" class="form-control" id="nombre" name="nombre" value="" > <!-- Agrega el atributo 'name' a los campos de entrada -->
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" value="" >
+                <input type="text" class="form-control" id="apellido" name="apellido" value="" >
             </div>
             <div class="form-group">
                 <label for="rut">RUT:</label>
-                <input type="text" class="form-control" id="rut" value="" >
+                <input type="text" class="form-control" id="rut" name="rut" value="" >
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" class="form-control" id="email" value="" >
+                <input type="email" class="form-control" id="email" name="email" value="" >
             </div>
             <div class="d-flex justify-content-end">
-                <a href="{{ route('admin.home') }}" class="btn btn-primary mr-2">Agregar</a>
-                <a href="{{ route('login') }}" class="btn btn-secondary mr-2">Cancelar</a>
-                
-                {{-- <button type="button" class="btn btn-primary">Agregar</button> --}}
+                <button type="submit" class="btn btn-primary">Agregar</button> <!-- Cambia el enlace por un botón de tipo 'submit' -->
+                <a href="{{ route('admin.home') }}" class="btn btn-secondary mr-2">Cancelar</a>
             </div>
         </form>
+<!-- ... -->
+
     </div>
 
     <!-- Agrega los scripts de Bootstrap -->

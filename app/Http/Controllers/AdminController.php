@@ -34,4 +34,21 @@ class AdminController extends Controller
         return view('admin.agregarProfesor');
 
     }
+
+    public function store(Request $request)
+    {
+        $estudiante = new Estudiante();
+        $estudiante->rut = $request->rut;
+        $estudiante->nombre = $request->nombre;
+        $estudiante->apellido = $request->apellido;
+        $estudiante->email = $request->email;
+        $estudiante->save();
+
+
+    return redirect()->route('admin.home')->with('success', 'Alumno agregado exitosamente');
+}
+
+
+
+
 }
