@@ -14,6 +14,7 @@ class Propuesta extends Model
     protected $table = 'propuestas';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    public $timestamps = false;
     protected $fillable = [
         'fecha', 'documento', 'estado', 'estudiante_rut',];
 

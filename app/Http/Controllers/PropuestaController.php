@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Propuesta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class PropuestaController extends Controller
 {
@@ -13,20 +15,53 @@ class PropuestaController extends Controller
 
        }
 
-       public function subirPropuesta(Request $request)
-       {
-           $archivo = $request->file('documento');
-           $nombreArchivo = 'nombre_deseado.pdf'; // Reemplaza 'nombre_deseado' por el nombre que desees utilizar
-   
-           $rutaArchivo = $archivo->storeAs('carpeta_destino', $nombreArchivo, 'public');
-   
-           // Guardar el nombre del archivo en la tabla propuestas
-           $propuesta = new Propuesta;
-           $propuesta->nombre_documento = $nombreArchivo;
-           // Resto de asignaciones de valores a los campos de la propuesta
-           $propuesta->save();
-   
-           return redirect()->route('alumno.home')->with('success', 'Propuesta subida exitosamente.');
-       }
-   
+
+
+
+    public function subirPropuesta(Request $request, $rut)
+    {
+        $documento = $request->file('documento');
+        $nombre = $documento->getClientOriginalName();
+        
+        $contador = 1;
+        $auxiliar = $nombre;
+        while (Storage::exists('public/' . $nombre)) {
+            $auxiliar = $nombre;
+            $contador . $nombre;
+            $contador++;
+        }
+        
+        $path = $documento->storeAs('public', $nombre);
+
+
+        // Crear una nueva instancia de Propuesta
+        $propuesta = new Propuesta();
+        $propuesta->fecha = now(); // Obtener la fecha actual
+        $propuesta->documento = $nombre;
+        $propuesta->estado = 1; // Establecer el estado deseado
+        $propuesta->estudiante_rut = $rut;
+        $propuesta->save();
+
+    dd("subido");
+
+    return $path;
 }
+    
+    
+
+
+    // public function subirPropuesta(Request $request) 
+    // {
+    //     $path = $request->file('documento')->store('public');
+        
+        
+        
+    //     return dd("Subido");
+    // }   
+
+}
+
+
+
+
+

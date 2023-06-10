@@ -6,6 +6,7 @@
         <h1 class="text-center">Subir Propuesta</h1>
 
         <form action="{{ route('alumno.subirPropuesta', ['rut' => $rut]) }}" method="POST" enctype="multipart/form-data" class="mt-4">
+
             @csrf
 
             <div class="form-group">
