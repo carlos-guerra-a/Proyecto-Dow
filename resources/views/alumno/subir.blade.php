@@ -1,6 +1,7 @@
 @extends('templates.master')
 
 @section('contenido-principal')
+
     <div class="container-fluid d-flex flex-column justify-content-center">
         <h1 class="text-center">Subir Propuesta</h1>
 

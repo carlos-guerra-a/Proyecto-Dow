@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estudiante;
+use App\Models\Profesor_Propuesta;
+use App\Models\Profesor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -33,8 +35,10 @@ class AlumnoController extends Controller
     {
     $alumnos = Estudiante::find($rut);
     $propuestas = $alumnos->propuestas;
+    $profesorPropuestas = Profesor_Propuesta::all();
+    $profesores = Profesor::all();
     
-    return view('alumno.propuestas', compact('alumnos','propuestas'));
+    return view('alumno.propuestas', compact('alumnos','propuestas', 'profesorPropuestas', 'profesores'));
     }
 
     //    

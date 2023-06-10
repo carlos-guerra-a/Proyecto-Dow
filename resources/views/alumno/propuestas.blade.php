@@ -47,8 +47,15 @@
                     <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                         <div class="card-body">
                             <div class="container">
-                                <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            </div>
-                        </div>
+                                <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                  </div>
+                         </div>
+                         <div class="container">
+                         @foreach ($profesorPropuestas as $profesorPropuesta)
+                            @if($propuesta->id == $profesorPropuesta->propuesta_id)
+                                {{ $profesorPropuesta->comentario }}
+                            @endif
+
+                        @endforeach
                         
                      </div>
                 </div>
