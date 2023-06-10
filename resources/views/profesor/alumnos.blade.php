@@ -11,8 +11,8 @@
                 <span class="font-weight-bold">Nombre de alumno:</span> {{ $alumno->nombre }} {{ $alumno->apellido }}
                 
             </div>
-                <span class="font-weight-bold ml-auto">N° de propuestas:</span>
-                <span class="badge badge-primary badge-pill">{{ $alumno->propuestas_count }}</span>
+                <span class="font-weight-bold ml-auto ">N° de propuestas:</span>
+                <span class="badge badge-primary badge-pill bg-dark">{{ $alumno->propuestas_count }}</span>
             </a>
         @endforeach
         

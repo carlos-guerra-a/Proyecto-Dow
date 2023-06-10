@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="{{asset('resources/css/app.css')}}">
     <title>USM - Sistema de TSI</title>
 </head>
-<body style="background-color:white">
+<body class="bg-white" >
 
     <!-- navbar -->
     <div class="container-fluid px-0 mx-0">
         <nav class="navbar bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('login') }}">
                     <img src="{{asset('images\logo-usm.png')}}"  class="d-inline-block align-text-top container-fluid">
                 </a>
                 <div class="d-flex justify-content-center mb-4">
-                    <a href="{{ route('login') }}" class="btn btn-primary border">Volver</a>
+                    <a href="{{ route('login') }}" class="btn btn-dark border text-white">Volver</a>
                 </div>
             </div>
         </nav>
@@ -32,7 +32,7 @@
     
     <!-- footer -->
     <div>
-        <footer class="bg-light tex-dark pt-5 pb-4 mx-0" style="position:absolute; bottom:0; width: 100%">
+        <footer class="bg-light text-dark pt-2 pb-2 mx-0" style="position:absolute; bottom:0; width: 100%">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -62,13 +62,7 @@
                         </p>
                     </div>
                     <hr class="mb-4">
-                    <div class="text-center">
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class=""></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </footer>
