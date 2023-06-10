@@ -13,7 +13,7 @@ class Profesor_Propuesta extends Model
     protected $table = 'profesor_propuesta';
     protected $primaryKey = ['propuesta_id', 'profesor_rut'];
     protected $fillable = ['propuesta_id', 'profesor_rut', 'fecha', 'hora', 'comentario'];
-    public $timestamps = true;
+    public $timestamps = false;
     public $incrementing = false;
 
     public function profesor():BelongsTo{

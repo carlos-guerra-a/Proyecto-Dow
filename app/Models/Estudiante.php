@@ -14,6 +14,7 @@ class Estudiante extends Model
     protected $primaryKey = 'rut';
     public $incrementing = false;
     protected $fillable = ['rut', 'nombre', 'apellido', 'email'];
+    public $timestamps = false;
     
     public function propuestas():HasMany{
         return $this->hasMany(Propuesta::class, 'estudiante_rut', 'rut');

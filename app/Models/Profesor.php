@@ -13,7 +13,7 @@ class Profesor extends Model
     protected $table = 'profesores';
     protected $primaryKey = 'rut';
     protected $fillable = ['rut', 'nombre', 'apellido'];
-    public $timestamps = true;
+    public $timestamps = false;
     public $incrementing = false;
 
     public function propuestas():BelongsToMany{

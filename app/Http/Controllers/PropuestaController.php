@@ -24,11 +24,14 @@ class PropuestaController extends Controller
         
         $contador = 1;
         $auxiliar = $nombre;
-        while (Storage::exists('public/' . $nombre)) {
+        while (Storage::exists('public/' . $auxiliar)) {
             $auxiliar = $nombre;
-            $contador . $nombre;
+            $auxiliar = $contador.$auxiliar;
+            $nombre = $contador . $nombre;
             $contador++;
         }
+
+        $nombre = $auxiliar;
         
         $path = $documento->storeAs('public', $nombre);
 
@@ -42,9 +45,8 @@ class PropuestaController extends Controller
         $propuesta->save();
 
         
-
-
         return redirect()->route('archivo.cargado', ['rut' => $rut]);
+
         ;
 }
     
