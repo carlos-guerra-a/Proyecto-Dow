@@ -2,20 +2,11 @@
 
 
 @section('contenido-principal')
-@php
-$estados = [1 => 'Esperando Revisión',2=>'Modificar Propuesta',3=>'Rechazado',4=>'Aceptado'];
-@endphp
+    @php
+        $estados = [1 => 'Esperando RevisiÃ³n',2=>'Modificar Propuesta',3=>'Rechazado',4=>'Aceptado'];
+    @endphp
 
-    <nav class="navbar bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://aula.usm.cl/portada/images/logo-usm_blanco.ba50c1e92c05ce59220ab09bd88a6d5b.svg" alt="Logo" class="d-inline-block align-text-top container-fluid">     
-            </a>
-            <div class="d-flex justify-content-center mb-4">
-                <a href="{{ route('alumno.home') }}" class="btn btn-primary border">Volver</a>
-            </div>
-        </div>
-    </nav>
+    
 
     <div class="text-center mb-4">
         <h1>Propuestas de {{ $alumnos->nombre }} {{ $alumnos->apellido }}</h1>
@@ -35,22 +26,18 @@ $estados = [1 => 'Esperando Revisión',2=>'Modificar Propuesta',3=>'Rechazado',4
                     <div id="collapse-{{ $propuesta->id }}" class="collapsing" aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                         <div class="card-body">
                             <div class="container">
-                                <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            </div>
+                                <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            
+                            </div>
                         </div>
-                        
-                     </div>
+                        <div class="container">
+                            @foreach ($profesorPropuestas as $profesorPropuesta)
+                                @if($propuesta->id == $profesorPropuesta->propuesta_id)
+                                    {{ $profesorPropuesta->comentario }}
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             @endforeach
-            <div>
-                <div class="row">
-                    <div class="col mx-4">
-                        <a href="{{ route('alumno.subir', ['rut' => $alumnos->rut]) }}" class="btn btn-primary ml-auto">Agregar Propuesta</a>
-
-            </div>
         </div>
-
-    </div>
-    
-
-</body>
-</html>
+@endsection
