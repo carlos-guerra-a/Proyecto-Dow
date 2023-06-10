@@ -12,7 +12,7 @@
 
     <title>USM - Sistema de TSI</title>
 </head>
-<body class="bg-white" >
+<body class="bg-white" style="display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh" >
 
     <!-- navbar -->
     <div class="container-fluid px-0 mx-0">
@@ -35,12 +35,12 @@
     
     <!-- footer -->
     <div>
-        <footer class="bg-light text-dark pt-2 pb-2 mx-0" style="position:absolute; bottom:0; width: 100%">
+        <footer class="bg-light text-dark pt-2 pb-2 mx-0" style="padding: 1em 0; margin-top: auto">
             <div class="container text-center text-md-start">
                 <div class="row text-center text-md-start">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Alumnos</h5>
-                        <hr class="mb-4">
+                        <h6 class="text-uppercase mb-1 font-weight-bold text-primary">Alumnos</h6>
+                        <hr class="mb-2">
                         <p>
                             Joaquín Vergara 
                         </p>
@@ -51,9 +51,9 @@
                             Ian Dodman
                         </p>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Correos</h5>
-                        <hr class="mb-4">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-2">
+                        <h6 class="text-uppercase mb-1 font-weight-bold text-primary">Correos</h6>
+                        <hr class="mb-2">
                         <p>
                             <a href="#" class="text-dark">joaquin.vergarae@usm.cl</a>
                         </p>
@@ -64,7 +64,7 @@
                             <a href="#" class="text-dark">ian.dodman@usm.cl</a>
                         </p>
                     </div>
-                    <hr class="mb-4">
+                    <hr class="mb-2">
                     
                 </div>
             </div>

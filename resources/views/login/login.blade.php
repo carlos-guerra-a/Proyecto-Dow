@@ -5,7 +5,7 @@
     <div class="container-fluid d-flex flex-column justify-content-center">
         <div class="row g-0">
             <div class="col d-flex flex-fluid justify-content-center">
-                <div class="card mt-5">
+                <div class="card mt-0">
                     <div class="card-body">
                         <h5 class="card-title">Bienvenido</h5>
                         <form method="POST" action="{{ route('login.post') }}">
