@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Propuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 
 class PropuestaController extends Controller
@@ -14,8 +15,6 @@ class PropuestaController extends Controller
         return view('propuesta.home', compact('propuesta'));
 
        }
-
-
 
 
     public function subirPropuesta(Request $request, $rut)
@@ -34,17 +33,19 @@ class PropuestaController extends Controller
         $path = $documento->storeAs('public', $nombre);
 
 
-        // Crear una nueva instancia de Propuesta
+
         $propuesta = new Propuesta();
-        $propuesta->fecha = now(); // Obtener la fecha actual
+        $propuesta->fecha = now(); 
         $propuesta->documento = $nombre;
-        $propuesta->estado = 1; // Establecer el estado deseado
+        $propuesta->estado = 1; 
         $propuesta->estudiante_rut = $rut;
         $propuesta->save();
 
-    dd("subido");
+        
 
-    return $path;
+
+        return redirect()->route('archivo.cargado', ['rut' => $rut]);
+        ;
 }
     
     

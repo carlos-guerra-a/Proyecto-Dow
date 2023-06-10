@@ -27,7 +27,7 @@ Route::get('/profesor/{rut}/propuestas', [ProfesorController::class,'propuestas'
 
 // Agregar profe o alumno
 Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
-Route::post('/admin/guardarAlumno', [AdminController::class, 'store'])->name('admin.guardarAlumno'); // Nueva ruta para guardar el alumno
+Route::post('/admin/guardarAlumno', [AdminController::class, 'store'])->name('admin.guardarAlumno'); 
 Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
 Route::post('/admin/guardarProfesor', [AdminController::class, 'storeProfesor'])->name('admin.guardarProfesor');
 
@@ -36,6 +36,8 @@ Route::post('/admin/guardarProfesor', [AdminController::class, 'storeProfesor'])
 // Subir
 Route::get('/alumno/{rut}/subir', [AlumnoController::class, 'vistaSubir'])->name('alumno.subir');
 
+// Route::get('/alumno/{rut}/mensaje', [PropuestaController::class, 'archivoCargado'])->name('archivo.cargado');
+Route::get('/alumno/{rut}/mensaje', function ($rut) {return view('alumno.mensaje', compact('rut'));})->name('archivo.cargado');
 
 
 //subir

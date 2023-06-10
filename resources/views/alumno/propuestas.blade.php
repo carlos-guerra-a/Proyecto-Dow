@@ -25,10 +25,10 @@
                     aria-labelledby="heading-{{ $propuesta->id }}" data-parent="#propuestas-accordion">
                     <div class="card-body">
                         <div class="container">
-                            @foreach ($propuesta->documentos as $documento)
-                                <embed src="{{ asset('storage/public' . $documento->nombre) }}" width="100%"
+                            {{-- @foreach ($propuesta->documentos as $documento) --}}
+                            <embed src="{{ asset('pdf/file1.pdf') }}" width="100%" height="600px" type="application/pdf">                            </div>
                                     height="600px" type="application/pdf">
-                            @endforeach
+                            {{-- @endforeach --}}
                         </div>
                     </div>
                 </div>
