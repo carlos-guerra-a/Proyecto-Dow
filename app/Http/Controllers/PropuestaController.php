@@ -9,12 +9,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class PropuestaController extends Controller
 {
-    public function verPropuesta($id)
-    {
-        $propuesta = Propuesta::find($id);
-        return view('propuesta.home', compact('propuesta'));
+    public function verPropuesta($id){
+    $propuesta = Propuesta::find($id);
+    return view('propuesta.home', ['propuesta' => $propuesta]);
+    }
 
-       }
 
 
     public function subirPropuesta(Request $request, $rut)
