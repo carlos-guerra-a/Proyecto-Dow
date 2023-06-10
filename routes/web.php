@@ -32,4 +32,4 @@ Route::get('/alumno/{rut}/subir', [AlumnoController::class, 'vistaSubir'])->name
 
 
 //subir
-Route::post('/alumno/subir', [PropuestaController::class, 'subirPropuesta'])->name('alumno.subirPropuesta');
+Route::post('/alumno/subir/{rut}', [PropuestaController::class, 'subirPropuesta'])->name('alumno.subirPropuesta');

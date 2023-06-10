@@ -38,12 +38,16 @@ class AlumnoController extends Controller
     }
 
     //    
-    public function vistaSubir($rut){
+    // public function vistaSubir($rut){
 
-        $alumnos = Estudiante::find($rut);
+    //     $alumnos = Estudiante::find($rut);
 
-        return view('alumno.subir', compact('rut', 'alumnos'));
-    }
+    //     return view('alumno.subir', compact('rut', 'alumnos'));
+    // }
+    public function vistaSubir($rut)
+{
+    return view('alumno.subir', compact('rut'));
+}
 
 
     

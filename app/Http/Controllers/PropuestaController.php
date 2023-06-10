@@ -18,24 +18,36 @@ class PropuestaController extends Controller
 
 
 
-    public function subirPropuesta(Request $request)
+    public function subirPropuesta(Request $request, $rut)
     {
         $documento = $request->file('documento');
         $nombre = $documento->getClientOriginalName();
         
         $contador = 1;
+        $auxiliar = $nombre;
         while (Storage::exists('public/' . $nombre)) {
-            $nombre =  $contador . '_' . $nombre;
+            $auxiliar = $nombre;
+            $contador . $nombre;
             $contador++;
         }
-    
+        
         $path = $documento->storeAs('public', $nombre);
-    
-        dd("subido");
-    
-        return $path;
-    }   
 
+
+        // Crear una nueva instancia de Propuesta
+        $propuesta = new Propuesta();
+        $propuesta->fecha = now(); // Obtener la fecha actual
+        $propuesta->documento = $nombre;
+        $propuesta->estado = 1; // Establecer el estado deseado
+        $propuesta->estudiante_rut = $rut;
+        $propuesta->save();
+
+    dd("subido");
+
+    return $path;
+}
+    
+    
 
 
     // public function subirPropuesta(Request $request) 
