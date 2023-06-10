@@ -29,6 +29,7 @@ Route::get('/profesor/{rut}/propuestas', [ProfesorController::class,'propuestas'
 Route::get('/admin/agregarAlumno', [AdminController::class, 'agregarAlumno'])->name('admin.agregarAlumno');
 Route::post('/admin/guardarAlumno', [AdminController::class, 'store'])->name('admin.guardarAlumno'); // Nueva ruta para guardar el alumno
 Route::get('/admin/agregarProfesor', [AdminController::class, 'agregarProfesor'])->name('admin.agregarProfesor');
+Route::post('/admin/guardarProfesor', [AdminController::class, 'storeProfesor'])->name('admin.guardarProfesor');
 
 
 

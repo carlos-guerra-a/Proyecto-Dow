@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <!-- Agrega los enlaces CSS de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,27 +21,28 @@
 
     <div class="container mt-4">
         <h1>Agregar Profesor</h1>
-        <form>
+        <<form method="POST" action="{{ route('admin.guardarProfesor') }}">
+            @csrf
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" value="">
+                <input type="text" class="form-control" id="nombre" name="nombre" value="">
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" value="">
+                <input type="text" class="form-control" id="apellido" name="apellido" value="">
             </div>
             <div class="form-group">
                 <label for="rut">RUT:</label>
-                <input type="text" class="form-control" id="rut" value="">
+                <input type="text" class="form-control" id="rut" name="rut" value="">
             </div>
             <div class="d-flex justify-content-end">
-                <a href="{{ route('admin.home') }}" class="btn btn-primary mr-2">Agregar</a>
+                <button type="submit" class="btn btn-primary mr-2">Agregar</button>
                 <a href="{{ route('login') }}" class="btn btn-secondary mr-2">Cancelar</a>
             </div>
         </form>
+        
     </div>
 
-    <!-- Agrega los scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

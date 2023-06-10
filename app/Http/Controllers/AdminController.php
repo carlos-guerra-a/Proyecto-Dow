@@ -46,9 +46,19 @@ class AdminController extends Controller
 
 
     return redirect()->route('admin.home')->with('success', 'Alumno agregado exitosamente');
-}
+    }
+
+    public function storeProfesor(Request $request)
+    {
+        $profesor = new Profesor();
+        $profesor->rut = $request->rut;
+        $profesor->nombre = $request->nombre;
+        $profesor->apellido = $request->apellido;
+        $profesor->save();
 
 
+    return redirect()->route('admin.home')->with('success', 'Profesor agregado exitosamente');
+    }
 
 
 }

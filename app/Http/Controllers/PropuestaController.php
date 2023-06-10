@@ -48,17 +48,6 @@ class PropuestaController extends Controller
 }
     
     
-
-
-    // public function subirPropuesta(Request $request) 
-    // {
-    //     $path = $request->file('documento')->store('public');
-        
-        
-        
-    //     return dd("Subido");
-    // }   
-
 }
 
 
